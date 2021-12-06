@@ -1,0 +1,18 @@
+Administradora(CNPJ, Nome)
+  PK(CNPJ)
+
+Condominio(Codigo_Cond, Nome)
+  PK(Codigo_Cond)
+
+Unidade(Codigo_Cond, Numero_Unid, Area, Descricao, CPFAluguel)
+  PK(Codigo_Cond, Numero_Unid)
+  FK(Codigo_Cond) ref Condominio (Codigo_Cond)
+  FK(CPFAluguel) ref Pessoa(CPF)
+
+Pessoa(CPF, Nome, Celular)
+  PK(CPF)
+
+Propriedade(Codigo_Cond, Numero_Unid, CPF)
+  PK(Codigo_Cond, Numero_Unid, CPF)
+  FK(Codigo_Cond, Numero_Unid) ref Unidade(Codigo_Cond, Numero_Unid)
+  FK(CPF) ref Pessoa(CPF)
