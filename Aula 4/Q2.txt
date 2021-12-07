@@ -1,5 +1,0 @@
-Se Medicamento e Perfumaria possuírem cardinalidade mínima 1, significa que cada venda deve conter no mínimo cada um desses, o que nem sempre é verdade, pois uma venda pode contar somente Perfumaria ou somente Medicamentos.
-
-Como a cardinalidade na subclasse gera esse problema de tipo, o certo seria colocar a cardinalidade mínima 1 numa relação de Venda com a superclasse Produto. No entanto, isso também não é possível, pois impossibilita a relação Venda-Medicamento-Receita. 
-
-Dessa forma, a cardinalidade deverá permanecer com mínimo 0, mesmo não sendo fidedigno ao problema.
