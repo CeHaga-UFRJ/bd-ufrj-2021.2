@@ -1,0 +1,19 @@
+Fabricante(CNPJ, Nome, Endereço)
+	PK(CNPJ)
+
+Produto(Número, CNPJFabricante, NomeComercial, TipoEmbalagem, Quantidade, PreçoUnitário, Tarja, Fórmula, TipoProduto, Categoria)
+	PK(Número, CNPJFabricante)
+	FK(CNPJFabricante) ref Fabricante(CNPJ)
+
+Venda(NúmeroNota, CidadeCliente, NomeCliente, Data)
+	PK(NúmeroNota)
+
+ReceitaMédica(CRM, Número, Data)
+	PK(CRM, Número)
+
+Comércio(NúmeroProduto, NúmeroNota, Quantidade, Imposto, CRM, NúmeroReceita)
+	PK(NúmeroProduto, NúmeroNota)
+	FK(NúmeroProduto) ref Produto(NúmeroProduto)
+	FK(NúmeroNota) ref Venda(NúmeroNota)
+	FK(CRM, NúmeroReceita) ref ReceitaMédica(CRM, NúmeroReceita) se Produto(TipoProduto) = Medicamento
+

@@ -1,0 +1,19 @@
+Veículo(Número, DataPróximaManutenção, Placa, CódigoTipo)
+	PK(Número)
+	FK(CódigoTipo) ref TipoVeículo(Código)
+
+TipoVeículo(Código, Nome, Arcondicionado)
+	PK(Código)
+
+Automóvel(Código, CambioAutomatico, Radio, NumeroPortas, DireçãoHidráulica)
+	PK(Código)
+	FK(Código) ref TipoVeículo(Código)
+
+Ônibus(Código, NúmeroPassageiros, Leito, Sanitário)
+	PK(Código)
+	FK(Código) ref TipoVeículo(Código)
+
+Similaridade(CódigoTipoA, CódigoTipoB)
+	PK(CódigoTipoA, CódigoTipoB)
+	FK(CódigoTipoA) ref TipoVeículo(Código)
+	FK(CódigoTipoB) ref TipoVeículo(Código)
