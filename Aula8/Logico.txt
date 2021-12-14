@@ -1,0 +1,26 @@
+Filme(id, titulo, ano_lancamento)
+	PK(id)
+
+Genero(nome)
+	PK(nome)
+
+Ator(id, nome_artistico, sexo, data_nascimento)
+	PK(id)
+
+Usuario(apelido, email, senha)
+	PK(apelido)
+
+Pertence(fk_Genero_nome, fk_Filme_id)
+	PK(fk_Genero_nome, fk_Filme_id)
+	FK(fk_Genero_nome) ref Genero(nome)
+	FK(fk_Filme_id) ref Filme(id)
+
+Avalia(fk_Usuario_apelido, fk_Filme_id, data, nota, critica)
+	PK(fk_Usuario_apelido, fk_Filme_id)
+	FK(fk_Usuario_apelido) ref Usuario(apelido)
+	FK(fk_Filme_id) ref Filme(id)
+
+Atua(fk_Filme_id, fk_Ator_id, papel)
+	PK(fk_Filme_id, fk_Ator_id, papel)
+	FK(fk_Filme_id) ref Filme(id)
+	FK(fk_Ator_id) ref Ator(id)
