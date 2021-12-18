@@ -8,17 +8,17 @@ insert into Funcionario values ('F1', '11111111111', NULL, 1), ('F2', '222222222
 insert into Dependente values ('11111111111', 'Dep do F1');
 
 (4)
-delete from Departamento where Dnome='RH';
+delete from Departamento where Dnumero=1;
 Deu erro ao deletar. O motivo é que existem funcionários que trabalham nesse departamento, ou de forma técnica, possuem uma FK apontando para essa tupla. A FK está no modo bloqueio, no qual não é possível apagar os dados que estão sendo apontados.
 
 (5)
-delete from Funcionario where Pnome='F1';
+delete from Funcionario where Cpf='11111111111';
 Na tabela Departamento nada ocorreu, porque não tinha nenhuma FK para o funcionário deletado.
 Na tabela Funcionario o funcionário 1 foi apagado e o funcionário 2 não possui mais supervisor, porque a FK de supervisor está no modo Substituição por Nulos, então ao apagar a tupla apontada, a FK vira nula.
 Na tabela Dependente o dependente do funcionário 1 foi apagado, porque a FK para funcionário está no modo Propagação, então ao apagar a tupla apontada, a tupla atual também é apagada.
 
 (6)
-update Departamento set Dnumero=2 where Dnome='RH';
+update Departamento set Dnumero=2 where Dnumero=1;
 Deu erro ao alterar, porque possui uma FK em funcionário que impede sua alteração. É possível mudar a constraint para adicionar o modificador Propagação ao atualizar, dessa forma é possível alterar a chave primária de Departamento e a FK de Funcionario mudar junto.
 
 alter table Funcionario drop constraint Func_Depto;
