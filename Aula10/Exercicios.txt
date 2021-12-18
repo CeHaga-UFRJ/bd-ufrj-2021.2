@@ -1,0 +1,9 @@
+(1) πPnome,Datanasc Funcionario
+
+(2) πCpf σSalario<30000 Funcionario
+
+(3a) πPnome,Minicial,Unome,Endereco σDnr=Dnumero∧Dnome='Pesquisa' (Funcionario ⨯ Departamento)
+
+(3b) πPnome,Minicial,Unome,Endereco (Funcionario ⨝Dnr=Dnumero∧Dnome='Pesquisa' Departamento)
+
+(3c) πPnome,Minicial,Unome,Endereco σDnome='Pesquisa' (Funcionario ⨝ ρDnr←Dnumero Departamento)
