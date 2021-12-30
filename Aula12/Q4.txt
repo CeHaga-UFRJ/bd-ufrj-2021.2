@@ -1,0 +1,3 @@
+πProjnumero,Dnumero,Unome,Endereco,Datanasc
+(σProjlocal='Maua'
+Projeto ⨝Dnum=Dnumero Departamento ⨝Cpf_gerente=Cpf Funcionario)

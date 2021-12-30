@@ -1,0 +1,3 @@
+πPnome (Funcionario ⨝Cpf=Cpf_gerente Departamento)
+∩
+πPnome (Funcionario ⨝Cpf=Fcpf Dependente)

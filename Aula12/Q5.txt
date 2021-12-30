@@ -1,0 +1,3 @@
+πProjnumero (σUnome='Silva' Funcionario ⨝Cpf=Fcpf Trabalha_em ⨝Pnr=Projnumero Projeto)
+∪
+πProjnumero (σUnome='Silva' Funcionario ⨝Cpf=Cpf_gerente Departamento ⨝Dnumero=Dnum Projeto)
