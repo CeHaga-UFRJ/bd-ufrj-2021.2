@@ -1,0 +1,1 @@
+πPnome σDependente.Nome_dependente=null (Funcionario ⟕Cpf=Fcpf Dependente)
