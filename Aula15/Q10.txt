@@ -1,0 +1,1 @@
+γ Dnome; min(Salario)->menorSalario (Funcionario ⨝Dnr=Dnumero Departamento)

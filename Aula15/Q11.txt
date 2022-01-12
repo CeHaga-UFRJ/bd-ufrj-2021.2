@@ -1,0 +1,1 @@
+πPnome (Funcionario ⨝Cpf=Fcpf (σcount≥2 γ Fcpf; count(Nome_dependente)->count Dependente))
