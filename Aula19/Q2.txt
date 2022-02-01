@@ -1,0 +1,29 @@
+Ambas tabelas encontram-se na 1FN, pois não há atributos atômicos mas há dependências parciais
+
+---
+
+>=2FN (Removendo as dependências parciais)
+
+Partida(#CodTime1, #CodTime2, #CodEstadio, #DataPartida, QtdGolTime1, QtdGolTime2)
+FK(CodTime1) ref Time(CodTime)
+FK(CodTime2) ref Time(CodTime)
+FK(CodEstadio) ref Estádio(CodEstadio)
+
+
+Escalação(#CodTime1, #CodTime2, #CodEstádio, #DataPartida, #CodJogador, CodTimeContrato)
+FK(CodTime1, CodTime2, CodEstádio, DataPartida) ref Partida(CodTime1, CodTime2, CodEstadio, DataPartida)
+FK(CodJogador) ref Jogador(CodJogador)
+FK(CodTimeContrato) ref Time(CodTime)
+
+
+Estádio(#CodEstadio, NomeEstádio, LocalEstádio)
+
+
+Time(#CodTime, NomeTime, EstadoTime)
+
+
+Jogador(#CodJogador, NomeJogador)
+
+---
+
+Podemos perceber que também não há dependências transitivas, logo, as tabelas estão na 3FN
